@@ -7,11 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="jumbotron text-center">
-        <h1>My Game</h1>
-    </div>
-<div class="text-center">
-    <h3>ลองทายหมายเลขดูสิ!!!!</h3></br>
+    
+<div >
     <input type="text" placeholder="?" id="text" size="50">
     <button onclick="guess()" class="btn btn-warning">Guess</button>
     <div id="hist"></div>
@@ -23,6 +20,7 @@
         function guess() {
             text = document.getElementById("text").value;
             document.getElementById("hist").innerHTML += text + " "; 
+            
         }
     </script> 
 </div>
