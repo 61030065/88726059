@@ -20,7 +20,9 @@
         function guess() {
             text = document.getElementById("text").value;
             document.getElementById("hist").innerHTML += text + " "; 
-            
+            if(text > rn){
+                document.getElementById("result").innerHTML = "มากไป";
+            }
         }
     </script> 
 </div>
