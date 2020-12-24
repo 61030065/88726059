@@ -7,8 +7,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-    
-<div >
+    <div class="jumbotron text-center">
+        <h1>My Game</h1>
+        <p>มาเล่นเกมกัน!</p> 
+    </div>
+<div class="text-center">
+    <h3>ลองทายหมายเลขดูสิ!!!!</h3></br>
     <input type="text" placeholder="?" id="text" size="50">
     <button onclick="guess()" class="btn btn-warning">Guess</button>
     <div id="hist"></div>
@@ -29,7 +33,12 @@
             if(text == rn){
                 document.getElementById("result").innerHTML = "ถูกต้อง";
             }
-
+        }
+        function doreset(){
+            document.getElementById('result').innerHTML='';
+            document.getElementById('hist').innerHTML='';
+            document.getElementById('text').value='?';
+            rn = Math.floor(Math.random()*100);
         }
     </script> 
 </div>
