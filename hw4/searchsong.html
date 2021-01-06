@@ -1,0 +1,23 @@
+<h1>ค้นหาพลง</h1>
+
+<input type="text" id="song" placeholder="ชื่อเพลงที่ต้องการค้นหา" size="50">
+</br>
+<button onclick="sech()">ค้นหา</button>
+<div id="demo"></div>
+<script>
+    function sech(){
+        songs = localStorage.getItem("names");
+        song = document.getElementById("song").value;
+        if(songs == song){
+            document.getElementById("demo").innerHTML = "พบ";
+            fullName = songs + "-" + localStorage.getItem("artists") + "<br> " +
+            localStorage.getItem("lyrics");
+            document.getElementById("demo").innerHTML = fullName;
+        }
+        // newArr2d = JSON.parse(str);
+        else {
+            document.getElementById("demo").innerHTML = "ไม่พบเพลง";
+        }   
+    }
+</script>
+<a href="newsong.html">เพิ่มเพลงใหม่</a>

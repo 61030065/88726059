@@ -1,0 +1,30 @@
+<h1>Add new song</h1>
+<input type="text" id="name" placeholder="ชื่อเพลง" size="50"></br>
+<input type="text" id="artist" placeholder="ศิลปิน" size="50"></br>
+<Textarea name="lyric" id="lyric" rows="10" cols="52" placeholder="เนื้อร้อง"></Textarea></br>
+<button onclick="save()">Save</button>
+<button onclick="clearf()">Clear form</button>
+<div id="print" ></div>
+<script>
+    function save(){
+        name = document.getElementById("name").value;
+        artist = document.getElementById("artist").value;
+        lyric = document.getElementById("lyric").value;
+        arr2d = [];
+        data = [name,artist,lyric];
+        arr2d.push(data);
+        str = JSON.stringify(arr2d);
+        localStorage.setItem("names", name);
+        localStorage.setItem("artists", artist);
+        localStorage.setItem("lyrics", lyric);
+        document.getElementById('name').value= null;
+        document.getElementById('artist').value= null;
+        document.getElementById('lyric').value= null;
+    }
+    function clearf(){
+        document.getElementById('name').value= null;
+        document.getElementById('artist').value= null;
+        document.getElementById('lyric').value= null;
+    }
+</script>
+<a href="searchsong.html">ค้นหาพลง</a>
