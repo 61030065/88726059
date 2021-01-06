@@ -1,23 +1,22 @@
 <h1>ค้นหาพลง</h1>
-
+<a href="newsong.html">เพิ่มเพลงใหม่</a></br>
 <input type="text" id="song" placeholder="ชื่อเพลงที่ต้องการค้นหา" size="50">
 </br>
 <button onclick="sech()">ค้นหา</button>
 <div id="demo"></div>
 <script>
     function sech(){
-        songs = localStorage.getItem("names");
+        document.getElementById("demo").innerHTML = " " ; 
+        songs = JSON.parse(localStorage.getItem("strs"));
+        // alert(songs[0][0]);
         song = document.getElementById("song").value;
-        if(songs == song){
-            document.getElementById("demo").innerHTML = "พบ";
-            fullName = songs + "-" + localStorage.getItem("artists") + "<br> " +
-            localStorage.getItem("lyrics");
-            document.getElementById("demo").innerHTML = fullName;
+        for(i=0 ; i<songs.length ;i++){
+            if(songs[i][0].indexOf(song)>= 0){
+                document.getElementById("demo").innerHTML += songs[i][0] + songs[i][1] + songs[i][2] +"<br>" ; 
+            }
         }
-        // newArr2d = JSON.parse(str);
-        else {
-            document.getElementById("demo").innerHTML = "ไม่พบเพลง";
-        }   
+        demo = document.getElementById("demo").innerHTML;
+        if(demo == " "){
+            document.getElementById("demo").innerHTML = "ไม่พบเพลง" ;}
     }
 </script>
-<a href="newsong.html">เพิ่มเพลงใหม่</a>
